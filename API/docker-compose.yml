@@ -1,0 +1,12 @@
+version: "2.2"
+services:
+  backend:
+    image: hackaton:latest
+    volumes:
+      - ./app:/code/app
+      - ./static:/code/static
+      - ./templates:/code/templates
+    ports:
+      - "80:80"
+    command: uvicorn app.main:app --host 0.0.0.0 --port 80 --reload
+    network_mode: host
