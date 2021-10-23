@@ -1,0 +1,49 @@
+version: "3.3"
+
+services:
+
+  traefik:
+    image: "traefik:v2.5"
+    container_name: "traefik"
+    restart: always
+    command:
+      #- "--log.level=DEBUG"
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.websecure.address=:443"
+      - "--entrypoints.web.address=:80"
+      - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
+      #- "--certificatesresolvers.myresolver.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
+      - "--certificatesresolvers.myresolver.acme.email=roblesmgustavoj@gmail.com"
+      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
+      - "--accesslog.filepath=/access.log"
+      - "--accesslog.bufferingsize=100"
+      - "--metrics.prometheus=true"
+      - "--entryPoints.metrics.address=:8085"
+      - "--metrics.prometheus.entryPoint=metrics"
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8082:8080"
+      - "8085:8085"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "./letsencrypt:/letsencrypt"
+      - "./access.log:/access.log"
+
+  python:
+    build: .
+    restart: always
+    user: root
+    environment:
+      - TZ= America/Mexico_City
+    ports:
+      - "82:80"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.red.rule=(Host(`hackaton-g-cs.dev`))"
+      - "traefik.http.routers.red.entrypoints=websecure"
+      - "traefik.http.routers.red.tls.certresolver=myresolver"
+      - "traefik.http.services.redService.loadbalancer.server.port=82"
+

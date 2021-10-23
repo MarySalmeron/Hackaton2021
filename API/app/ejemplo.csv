@@ -1,4 +1,3 @@
-Datos bancarios,,,,,,,,,,,,Datos del tarjetahabiente (Procesador o emisor),,,,,,,,,,,
 SEC,CUENTA,Nombre del tarjetahabiente,Tipo de tarjeta,Tarjeta_Nac_Ext,Fecha_Vta, IMP_OUTGOI ,AUTORIZACION,FOLIO,AFILIACION,COMERCIO,TIPO DE OPERATIVA,NOMBRE_COMPRADOR,TELEFONO,EMAIL,IP,CALLE,NUMERO,COLONIA,CIUDAD,Estado,CP,CODIGO_CONTRACARGO,DESCRIPCION_CONTRACARGO
 1,555555******5555,Juan Sanchez Díaz,Debito,Nacional,9/17/2021,355,831651,08/10/2021-12,1,OPENPAY,VENTA POR INTERNET,Juan Perez Diaz,4426879452,osc87@hotmail.com,192.168.1.28,Petroleos,222,Centro,Corregidora,Queretaro,76915,4837,Fraude Internacional
 2,555555******5555,Ruben Gonzalez Soto,Debito,Nacional,10/1/2021,648.6,934513,08/10/2021-41,1,OPENPAY,VENTA POR INTERNET,Alma Medina Suarez,5566447788,alma.m@gmail.com,192.154.1.55,Mirador,126,Carranza,Toluca,México,50190,68,Fraude Nacional
