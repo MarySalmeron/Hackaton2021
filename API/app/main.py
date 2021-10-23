@@ -1,10 +1,10 @@
 from typing import Optional
-
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from app.pqsql_lib.sqlBd import Bd
+
 
 app = FastAPI()
 
@@ -14,7 +14,7 @@ app.mount("/static", StaticFiles(directory="./static"), name="static")
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {"Nvl": "World"}
 
 @app.get("/page", response_class=HTMLResponse)
 async def home(request: Request):
@@ -25,9 +25,23 @@ async def home(request: Request):
 
 #Niveles de contracargos por banco o procesador
 
+
 @app.get("/Dashboard")
 def read_root():
-    return {"Niveles de contracargos por banco o procesador": "World"}
+    return {
+        "Porcentaje_de_contracargos_por_banco_o_procesador": {
+            "OPENPAY" : "22",
+            "BBVA" : "25",
+            "Banamex" : "27",
+            "Otros" : "23"
+        },
+        "Porcentaje_de_contracargo_por_BIN": {
+            "231423" : "22",
+            "231424" : "25",
+            "231421" : "27",
+            "231429" : "23"
+        }
+    }
 
 
 @app.get("/items/{item_id}")
