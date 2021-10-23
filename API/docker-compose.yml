@@ -13,6 +13,8 @@ services:
       - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.websecure.address=:443"
       - "--entrypoints.web.address=:80"
+      - "--entrypoints.ws.address=:8090"
+      - "--entrypoints.wss.address=:8091"
       - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
       #- "--certificatesresolvers.myresolver.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
       - "--certificatesresolvers.myresolver.acme.email=roblesmgustavoj@gmail.com"
@@ -27,6 +29,7 @@ services:
       - "443:443"
       - "8082:8080"
       - "8085:8085"
+      - "8090:8090"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "./traefik/letsencrypt:/letsencrypt"
@@ -50,6 +53,7 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.backend.rule=(Host(`hackatonbbva.g-cs.dev`))"
       - "traefik.http.routers.backend.entrypoints=websecure"
+      - "traefik.http.routers.backend.entrypoints=web"
       - "traefik.http.routers.backend.tls.certresolver=myresolver"
       - "traefik.http.services.backendService.loadbalancer.server.port=80"
 
