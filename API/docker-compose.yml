@@ -38,16 +38,26 @@ services:
     user: root
     environment:
       - TZ= America/Mexico_City
+      - REDIS_URL=redis
     volumes:
       - ./app:/code/app
     ports:
       - "82:80"
+      - "8000:8000"
+    depends_on:
+     - redis
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.backend.rule=(Host(`hackatonbbva.g-cs.dev`))"
       - "traefik.http.routers.backend.entrypoints=websecure"
       - "traefik.http.routers.backend.tls.certresolver=myresolver"
-      - "traefik.http.services.backendService.loadbalancer.server.port=82"
+      - "traefik.http.services.backendService.loadbalancer.server.port=80"
+
+  redis:
+    image: redis:latest
+    container_name: cache
+    
+    
 
   code-server:
     image: lscr.io/linuxserver/code-server

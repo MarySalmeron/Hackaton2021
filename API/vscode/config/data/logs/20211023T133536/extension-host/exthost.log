@@ -70,3 +70,6 @@
 [2021-10-23 13:36:20.403] [exthost] [info] eager extensions activated
 [2021-10-23 13:36:20.558] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.js-debug {"startup":false,"extensionId":{"value":"ms-vscode.js-debug","_lower":"ms-vscode.js-debug"},"activationEvent":"onCommand:extension.js-debug.clearAutoAttachVariables"}
 [2021-10-23 13:36:20.558] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/ms-vscode.js-debug/src/extension.js
+[2021-10-23 13:42:49.122] [exthost] [info] extension host terminating: received terminate message from renderer
+[2021-10-23 13:42:49.125] [exthost] [info] Lock '/config/data/User/workspaceStorage/33c891fc/vscode.lock': Marking the lockfile as scheduled to be released in 6000 ms.
+[2021-10-23 13:42:50.154] [exthost] [info] exiting with code 0
