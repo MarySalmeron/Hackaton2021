@@ -88,7 +88,14 @@ def read_item(item_id: int, q: Optional[str] = None):
 ### ENDPOINTS para consultar Cosas del buró
 @app.get("/items")
 def tests_db(q: Optional[str] = None):
-    bd = Bd('instruments_dev', 'localhost', 'postgres', 'postgres')
+    bd = Bd(
+        'hackathon_BBVA_2021',
+        # 'databasehackathon.cluster-ro-cr3eijvzbpoy.us-east-2.rds.amazonaws.com', #reader
+        # 'databasehackathon-instance-1.cr3eijvzbpoy.us-east-2.rds.amazonaws.com', #writer
+        'dbcontracargos.cluster-cr3eijvzbpoy.us-east-2.rds.amazonaws.com', #writer
+        'postgresql',
+        'holamundo',
+        )
     result = bd.do_query('SELECT * from opportunities LIMIT 10;', returnAffectedRows=True)
     print(result)
     return {"results": result}
