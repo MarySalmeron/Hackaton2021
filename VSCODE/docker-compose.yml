@@ -15,6 +15,7 @@ services:
       - PROXY_DOMAIN=code.hackatonbbva.g-cs.dev #optional
     volumes:
       - /path/to/appdata/config:/config
+      - /root:/root
     ports:
       - 8443:8443
     restart: unless-stopped

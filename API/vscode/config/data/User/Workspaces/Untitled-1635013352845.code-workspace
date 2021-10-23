@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"uri": "vscode-remote://code.hackatonbbva.g-cs.dev/config/workspace"
+		},
+		{
+			"uri": "vscode-remote://code.hackatonbbva.g-cs.dev/root"
+		}
+	],
+	"remoteAuthority": "code.hackatonbbva.g-cs.dev",
+	"settings": {}
+}

@@ -29,25 +29,48 @@ services:
       - "8085:8085"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "./letsencrypt:/letsencrypt"
-      - "./access.log:/access.log"
+      - "./traefik/letsencrypt:/letsencrypt"
+      - "./traefik/access.log:/access.log"
 
   backend:
-    image: hackaton:latest
+    build : .
     restart: always
     user: root
     environment:
       - TZ= America/Mexico_City
     volumes:
       - ./app:/code/app
-      - ./static:/code/static
-      - ./templates:/code/templates
     ports:
       - "82:80"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.red.rule=(Host(`hackaton-g-cs.dev`))"
-      - "traefik.http.routers.red.entrypoints=websecure"
-      - "traefik.http.routers.red.tls.certresolver=myresolver"
-      - "traefik.http.services.redService.loadbalancer.server.port=82"
+      - "traefik.http.routers.backend.rule=(Host(`hackatonbbva.g-cs.dev`))"
+      - "traefik.http.routers.backend.entrypoints=websecure"
+      - "traefik.http.routers.backend.tls.certresolver=myresolver"
+      - "traefik.http.services.backendService.loadbalancer.server.port=82"
+
+  code-server:
+    image: lscr.io/linuxserver/code-server
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Mexico_City
+      - PASSWORD=Hackaton2021@MEGAG #optional
+#      - HASHED_PASSWORD= #optional
+      - SUDO_PASSWORD=Hackaton2021@MEGAG #optional
+#      - SUDO_PASSWORD_HASH= #optional
+      - PROXY_DOMAIN=code.hackatonbbva.g-cs.dev #optional
+    volumes:
+      - ./vscode/config:/config
+      - /root/Hackaton2021/:/hackaton/
+    ports:
+      - 8443:8443
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.code.rule=(Host(`code.hackatonbbva.g-cs.dev`))"
+      - "traefik.http.routers.code.entrypoints=websecure"
+      - "traefik.http.routers.code.tls.certresolver=myresolver"
+      - "traefik.http.services.codeService.loadbalancer.server.port=8443"
 

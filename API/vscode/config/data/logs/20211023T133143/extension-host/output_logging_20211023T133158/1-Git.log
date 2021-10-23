@@ -1,0 +1,3 @@
+Validating found git in: git
+Using git 2.17.1 from git
+Opening repository for path='/hacakton' failed; ex=Error: spawn git EACCES
