@@ -32,12 +32,16 @@ services:
       - "./letsencrypt:/letsencrypt"
       - "./access.log:/access.log"
 
-  python:
-    build: .
+  backend:
+    image: hackaton:latest
     restart: always
     user: root
     environment:
       - TZ= America/Mexico_City
+    volumes:
+      - ./app:/code/app
+      - ./static:/code/static
+      - ./templates:/code/templates
     ports:
       - "82:80"
     labels:
