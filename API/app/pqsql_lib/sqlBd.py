@@ -4,10 +4,10 @@ from typing import Union
 class Bd():
 
   #Base de datos
-  hostname = 'localhost'
+  hostname = 'dbcontracargos.cluster-cr3eijvzbpoy.us-east-2.rds.amazonaws.com'
   username = 'postgres'
-  password = 'postgres'
-  database = None
+  password = 'holamundo'
+  database = 'dbcontracargos'
 
   def __init__(self, database: str, hostname='localhost', username='postgres', password=''):
     self.hostname=hostname
