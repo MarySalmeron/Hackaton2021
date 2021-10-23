@@ -4,6 +4,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from app.pqsql_lib.sqlBd import Bd
 
 app = FastAPI()
 
@@ -35,6 +36,13 @@ def read_item(item_id: int, q: Optional[str] = None):
 
 
 ### ENDPOINTS para consultar Cosas del buró
+@app.get("/items")
+def tests_db(q: Optional[str] = None):
+    bd = Bd('instruments_dev', 'localhost', 'postgres', 'postgres')
+    result = bd.do_query('SELECT * from opportunities LIMIT 10;', returnAffectedRows=True)
+    print(result)
+    return {"results": result}
+
 
 
 ### Endpoints para cargar contracargos
