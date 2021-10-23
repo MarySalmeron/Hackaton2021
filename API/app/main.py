@@ -1,27 +1,62 @@
 from typing import Optional
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse
-from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
 from app.pqsql_lib.sqlBd import Bd
+import redis
+import os
+
+r = redis.Redis(host=os.getenv('REDIS_URL'), port=6379, db=0)
+r.set('foo', 1)
+
+html = """
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chat</title>
+    </head>
+    <body>
+        <h1>WebSocket Chat</h1>
+        <form id="form" action="" onsubmit="sendMessage(event)">
+            <input type="text" id="messageText" autocomplete="off"/>
+            <button>Send</button>
+        </form>
+        <ul id='messages'>
+        </ul>
+        <script>
+            var ws = new WebSocket("ws://137.184.155.141:8000/ws");
+            ws.onmessage = function(event) {
+                var messages = document.getElementById('messages')
+                var message = document.createElement('li')
+                var content = document.createTextNode(event.data)
+                message.appendChild(content)
+                messages.appendChild(message)
+            };
+            function sendMessage(event) {
+                var input = document.getElementById("messageText")
+                ws.send(input.value)
+                input.value = ''
+                event.preventDefault()
+            }
+            const form = document.getElementById('form');
+            form.addEventListener('submit', sendMessage);
+        </script>
+    </body>
+</html>
+"""
 
 
 app = FastAPI()
 
-templates = Jinja2Templates(directory="templates")
-app.mount("/static", StaticFiles(directory="./static"), name="static")
-
-
 @app.get("/")
-def read_root():
-    return {"Nvl": "World"}
+async def get():
+    return HTMLResponse(html)
 
-@app.get("/page", response_class=HTMLResponse)
-async def home(request: Request):
-    data = {
-        "page": "Home page adfadsfads"
-    }
-    return templates.TemplateResponse("page.html", {"request": request, "data": data})
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+    while True:
+        data = await websocket.receive_text()
+        await websocket.send_text(f"Message text was: {data}")
 
 #Niveles de contracargos por banco o procesador
 

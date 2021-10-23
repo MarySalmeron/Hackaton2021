@@ -1,0 +1,75 @@
+[2021-10-23 13:35:40.391] [exthost] [info] extension host started
+[2021-10-23 13:35:40.394] [exthost] [error] Error: EEXIST: file already exists, open '/config/data/User/workspaceStorage/334032a8/vscode.lock'
+[2021-10-23 13:35:40.401] [exthost] [info] Lock '/config/data/User/workspaceStorage/334032a8/vscode.lock': Could not acquire lock, checking if the file is stale.
+[2021-10-23 13:35:40.409] [exthost] [info] Lock '/config/data/User/workspaceStorage/334032a8/vscode.lock': The lockfile is scheduled to have been released.
+[2021-10-23 13:35:40.410] [exthost] [info] Lock '/config/data/User/workspaceStorage/334032a8/vscode.lock': Deleting a stale lock.
+[2021-10-23 13:35:40.419] [exthost] [info] Lock '/config/data/User/workspaceStorage/334032a8/vscode.lock': Lock acquired.
+[2021-10-23 13:35:40.484] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2021-10-23 13:35:40.485] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/debug-auto-launch/dist/extension
+[2021-10-23 13:35:40.492] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2021-10-23 13:35:40.492] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/git/dist/main
+[2021-10-23 13:35:40.770] [exthost] [info] ExtensionService#_doActivateExtension vscode.github {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2021-10-23 13:35:40.770] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/github/dist/extension.js
+[2021-10-23 13:35:40.865] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":false,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"onStartupFinished"}
+[2021-10-23 13:35:40.866] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/emmet/dist/node/emmetNodeMain
+[2021-10-23 13:35:40.887] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":false,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"onStartupFinished"}
+[2021-10-23 13:35:40.887] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/merge-conflict/dist/mergeConflictMain
+[2021-10-23 13:35:40.891] [exthost] [info] eager extensions activated
+[2021-10-23 13:35:40.895] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.js-debug {"startup":false,"extensionId":{"value":"ms-vscode.js-debug","_lower":"ms-vscode.js-debug"},"activationEvent":"onCommand:extension.js-debug.clearAutoAttachVariables"}
+[2021-10-23 13:35:40.895] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/ms-vscode.js-debug/src/extension.js
+[2021-10-23 13:36:08.728] [exthost] [info] extension host terminating: received terminate message from renderer
+[2021-10-23 13:36:08.729] [exthost] [info] Lock '/config/data/User/workspaceStorage/334032a8/vscode.lock': Marking the lockfile as scheduled to be released in 6000 ms.
+[2021-10-23 13:36:09.739] [exthost] [info] exiting with code 0
+[2021-10-23 13:36:12.179] [exthost] [info] extension host started
+[2021-10-23 13:36:12.186] [exthost] [info] Lock '/config/data/User/workspaceStorage/334032a8/vscode.lock': Lock acquired.
+[2021-10-23 13:36:12.267] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2021-10-23 13:36:12.267] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/debug-auto-launch/dist/extension
+[2021-10-23 13:36:12.274] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2021-10-23 13:36:12.274] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/git/dist/main
+[2021-10-23 13:36:12.528] [exthost] [info] ExtensionService#_doActivateExtension vscode.github {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2021-10-23 13:36:12.528] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/github/dist/extension.js
+[2021-10-23 13:36:12.621] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":false,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"onStartupFinished"}
+[2021-10-23 13:36:12.622] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/emmet/dist/node/emmetNodeMain
+[2021-10-23 13:36:12.645] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":false,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"onStartupFinished"}
+[2021-10-23 13:36:12.646] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/merge-conflict/dist/mergeConflictMain
+[2021-10-23 13:36:12.651] [exthost] [info] eager extensions activated
+[2021-10-23 13:36:12.674] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.js-debug {"startup":false,"extensionId":{"value":"ms-vscode.js-debug","_lower":"ms-vscode.js-debug"},"activationEvent":"onCommand:extension.js-debug.clearAutoAttachVariables"}
+[2021-10-23 13:36:12.675] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/ms-vscode.js-debug/src/extension.js
+[2021-10-23 13:36:13.808] [exthost] [info] extension host terminating: received terminate message from renderer
+[2021-10-23 13:36:13.809] [exthost] [info] Lock '/config/data/User/workspaceStorage/334032a8/vscode.lock': Marking the lockfile as scheduled to be released in 6000 ms.
+[2021-10-23 13:36:14.817] [exthost] [info] exiting with code 0
+[2021-10-23 13:36:16.345] [exthost] [info] extension host started
+[2021-10-23 13:36:16.357] [exthost] [info] Lock '/config/data/User/workspaceStorage/382743db/vscode.lock': Lock acquired.
+[2021-10-23 13:36:16.447] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2021-10-23 13:36:16.447] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/debug-auto-launch/dist/extension
+[2021-10-23 13:36:16.453] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2021-10-23 13:36:16.453] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/git/dist/main
+[2021-10-23 13:36:16.738] [exthost] [info] ExtensionService#_doActivateExtension vscode.github {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2021-10-23 13:36:16.738] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/github/dist/extension.js
+[2021-10-23 13:36:16.838] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":false,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"onStartupFinished"}
+[2021-10-23 13:36:16.838] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/emmet/dist/node/emmetNodeMain
+[2021-10-23 13:36:16.859] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":false,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"onStartupFinished"}
+[2021-10-23 13:36:16.859] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/merge-conflict/dist/mergeConflictMain
+[2021-10-23 13:36:16.864] [exthost] [info] eager extensions activated
+[2021-10-23 13:36:17.007] [exthost] [info] extension host terminating: received terminate message from renderer
+[2021-10-23 13:36:17.010] [exthost] [info] Lock '/config/data/User/workspaceStorage/382743db/vscode.lock': Marking the lockfile as scheduled to be released in 6000 ms.
+[2021-10-23 13:36:17.754] [exthost] [error] Error: ENOENT: no such file or directory, scandir '/hacckaton'
+[2021-10-23 13:36:18.016] [exthost] [info] exiting with code 0
+[2021-10-23 13:36:19.905] [exthost] [info] extension host started
+[2021-10-23 13:36:19.915] [exthost] [info] Lock '/config/data/User/workspaceStorage/33c891fc/vscode.lock': Lock acquired.
+[2021-10-23 13:36:20.001] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2021-10-23 13:36:20.002] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/debug-auto-launch/dist/extension
+[2021-10-23 13:36:20.009] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2021-10-23 13:36:20.009] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/git/dist/main
+[2021-10-23 13:36:20.275] [exthost] [info] ExtensionService#_doActivateExtension vscode.github {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2021-10-23 13:36:20.276] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/github/dist/extension.js
+[2021-10-23 13:36:20.375] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":false,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"onStartupFinished"}
+[2021-10-23 13:36:20.375] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/emmet/dist/node/emmetNodeMain
+[2021-10-23 13:36:20.397] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":false,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"onStartupFinished"}
+[2021-10-23 13:36:20.397] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/merge-conflict/dist/mergeConflictMain
+[2021-10-23 13:36:20.403] [exthost] [info] eager extensions activated
+[2021-10-23 13:36:20.558] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.js-debug {"startup":false,"extensionId":{"value":"ms-vscode.js-debug","_lower":"ms-vscode.js-debug"},"activationEvent":"onCommand:extension.js-debug.clearAutoAttachVariables"}
+[2021-10-23 13:36:20.558] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/local/share/.config/yarn/global/node_modules/code-server/vendor/modules/code-oss-dev/extensions/ms-vscode.js-debug/src/extension.js
+[2021-10-23 13:42:49.122] [exthost] [info] extension host terminating: received terminate message from renderer
+[2021-10-23 13:42:49.125] [exthost] [info] Lock '/config/data/User/workspaceStorage/33c891fc/vscode.lock': Marking the lockfile as scheduled to be released in 6000 ms.
+[2021-10-23 13:42:50.154] [exthost] [info] exiting with code 0
