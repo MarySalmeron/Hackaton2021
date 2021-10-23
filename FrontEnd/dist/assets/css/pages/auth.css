@@ -1,2 +1,36 @@
-body{background-color:linear-gradient(left,#045B8C,#072146);}#auth{height:100vh;overflow-x:hidden}#auth #auth-left{background:  url(../../images/bg/fondo.PNG),linear-gradient(left,#045B8C,#072146);}#auth #auth-right{padding:5rem 8rem}#auth #auth-right .auth-title{font-size:4rem;margin-bottom:1rem}#auth #auth-right .auth-subtitle{color:#a8aebb;font-size:1.7rem;line-height:2.5rem}#auth #auth-right .auth-logo{margin-bottom:7rem}#auth #auth-left .auth-logo img{height:7.2rem}@media screen and (max-width:767px){#auth #auth-left{padding:5rem}}
-
+body{
+    background-color:linear-gradient(left,#045B8C,#072146);
+}
+#auth{
+    height:100vh;overflow-x:hidden
+}
+#auth .auth-logo-size{
+        vertical-align: middle!important;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        
+}
+#auth #auth-left{
+    background:  url(../../images/bg/fondo.PNG),linear-gradient(left,#045B8C,#072146);
+}
+#auth #auth-right{
+    padding:5rem 8rem
+}
+#auth #auth-right .auth-title{
+    font-size:4rem;margin-bottom:1rem
+}
+#auth #auth-right .auth-subtitle{
+    color:#a8aebb;font-size:1.7rem;line-height:2.5rem
+}
+#auth #auth-right .auth-logo{
+    margin-bottom:7rem
+}
+#auth #auth-left .auth-logo img{
+    height:7.2rem
+}
+@media screen and (max-width:767px){
+    #auth #auth-left{
+        padding:5rem
+    }
+}
