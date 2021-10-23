@@ -1,19 +1,10 @@
 from typing import Optional
-
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from app.pqsql_lib.sqlBd import Bd
 
-#Lectura Datos Dummy
-file = open('./app/ejemplo.csv')
-csvreader = csv.reader(file)
-header = []
-header = next(csvreader)
-rows = []
-for row in csvreader:
-    rows.append(row)
 
 app = FastAPI()
 
