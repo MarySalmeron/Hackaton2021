@@ -24,6 +24,20 @@ class Persona(BaseModel):
     Score: Optional[str] = None
     Detalle: Optional[list] = None
 
+class Score(BaseModel):
+    Tiempo1Dia: Optional[str] = None
+    Tiempo30Dias: Optional[str] = None
+    Tiempo90Dias: Optional[str] = None
+
+class Query(BaseModel):
+    RFC: Optional[str] = None
+    Telefono: Optional[str] = None
+    Correo_Electronico: Optional[str] = None
+    Comercio: Optional[str] = None
+    Nombre_Comprador: Optional[str] = None
+    IP: Optional[str] = None
+    
+
 r = redis.Redis(host=os.getenv('REDIS_URL'), port=6379, db=0)
 r.set('foo', 1)
 
@@ -75,22 +89,55 @@ async def buscarPersona(Persona: Persona):
     Persona = Persona(
         id='123',
         RFC="ROMG9887765M5",
-    Nombres="Gustavo",
-    Apellido_Paterno="Robles",
-    Apellido_Materno="Martínez",
-    Telefono="556667778877",
-    Correo_Electronico="hi@gus.works",
-    Codigo_Postal="09212",
-    Numero_Tarjetas="5",
-    Bancos_Cliente="BBVA,Santander",
-    Estado="Ciudad de México",
-    Ciudad="Coyoacán",
-    Score="80%",
-    Detalle=[
+        Nombres="Gustavo",
+        Apellido_Paterno="Robles",
+        Apellido_Materno="Martínez",
+        Telefono="556667778877",
+        Correo_Electronico="hi@gus.works",
+        Codigo_Postal="09212",
+        Numero_Tarjetas="5",
+        Bancos_Cliente="BBVA,Santander",
+        Estado="Ciudad de México",
+        Ciudad="Coyoacán",
+        Score="80%",
+        Detalle=[
 
-    ]
+        ]
     )
     return Persona
+
+@app.get("/score/comercio/{comercio}", response_model=Score)
+async def read_score_comercio(comercio: str):
+    return Score(
+        Tiempo1Dia = "99%",
+        Tiempo30Dias = "40%",
+        Tiempo90Dias = "10%"
+    )
+
+@app.get("/score/nombre_comprador/{nombre_comprador}", response_model=Score)
+async def read_score_nombre_comprador(nombre_comprador: str):
+    return Score(
+        Tiempo1Dia = "39%",
+        Tiempo30Dias = "30%",
+        Tiempo90Dias = "10%"
+    )
+
+@app.get("/score/ip/{ip}", response_model=Score)
+async def read_score_ip(ip: str):
+    return Score(
+        Tiempo1Dia = "10%",
+        Tiempo30Dias = "20%",
+        Tiempo90Dias = "10%"
+    )
+
+@app.post("/score/query/", response_model=Score)
+async def buscarQuery(Query: Query):
+    return Score(
+        Tiempo1Dia = "29%",
+        Tiempo30Dias = "20%",
+        Tiempo90Dias = "10%"
+    )
+
 
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):

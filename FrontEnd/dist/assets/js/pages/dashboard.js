@@ -15,17 +15,17 @@ var optionsProfileVisit = {
 	plotOptions: {
 	},
 	series: [{
-		name: 'sales',
-		data: [9,20,30,20,10,20,30,20,10,20,30,20]
+		name: 'contracargos',
+		data: [9,20,30,20,10,20,30,20,30,44,40,50]
 	}],
 	colors: '#435ebe',
 	xaxis: {
-		categories: ["Jan","Feb","Mar","Apr","May","Jun","Jul", "Aug","Sep","Oct","Nov","Dec"],
+		categories: ["Ene","Feb","Mar","Abr","May","Jun","Jul", "Ago","Sep","Oct","Nov","Dic"],
 	},
 }
 let optionsVisitorsProfile  = {
-	series: [70, 30],
-	labels: ['Male', 'Female'],
+	series: [50, 50],
+	labels: ['Agencia de Autos', 'Bares'],
 	colors: ['#435ebe','#55c6e8'],
 	chart: {
 		type: 'donut',
@@ -114,3 +114,53 @@ chartAmerica.render();
 chartEurope.render();
 chartProfileVisit.render();
 chartVisitorsProfile.render()
+
+
+
+let Nivelesdcontracargpotipdtarjeta  = {
+	series: [70, 30],
+	labels: ['Crédito', 'Debito'],
+	colors: ['#435ebe','#55c6e8'],
+	chart: {
+		type: 'donut',
+		width: '100%',
+		height:'350px'
+	},
+	legend: {
+		position: 'bottom'
+	},
+	plotOptions: {
+		pie: {
+			donut: {
+				size: '30%'
+			}
+		}
+	}
+}
+var NivelesdcontracargpotipdtarjetaChart = new ApexCharts(document.querySelector("#chart-Nivelesdcontracargpotipdtarjeta"), Nivelesdcontracargpotipdtarjeta);
+NivelesdcontracargpotipdtarjetaChart.render()
+
+
+
+let Nivelesdcontracargpotipdcomercio  = {
+	series: [45, 55, 20],
+	labels: ['Ropa', 'Calzado', 'Comida'],
+	colors: ['#435ebe','#55c6e8', '#5506e8'],
+	chart: {
+		type: 'donut',
+		width: '100%',
+		height:'350px'
+	},
+	legend: {
+		position: 'bottom'
+	},
+	plotOptions: {
+		pie: {
+			donut: {
+				size: '30%'
+			}
+		}
+	}
+}
+var NivelesdcontracargpotipdcomercioChart = new ApexCharts(document.querySelector("#chart-Nivelesdcontracargpotipdcomercio"), Nivelesdcontracargpotipdcomercio);
+NivelesdcontracargpotipdcomercioChart.render()

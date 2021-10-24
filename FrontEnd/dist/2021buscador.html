@@ -95,21 +95,26 @@
                         <div id="auth-left">
                             <div class="card-content" style="background-color:#FFFFFF; border-radius: 10px;">
                                 <div class="card-body">
-                                    <form action="index.html">
+                                    <div class="form-group position-relative has-icon-left mb-4">
+                                        <input type="text" class="form-control form-control-xl" placeholder="RFC"  style="background-color: #F2F5FA;">
+                                        <div class="form-control-icon">
+                                            <i class="bi bi-person"></i>
+                                        </div>
+                                    </div>
                                         <div class="form-group position-relative has-icon-left mb-4">
-                                            <input type="text" class="form-control form-control-xl" placeholder="Nombres" style="background-color: #F2F5FA;">
+                                            <input type="text" class="form-control form-control-xl" placeholder="Nombres" value="Daniel" style="background-color: #F2F5FA;">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-person"></i>
                                             </div>
                                         </div>
                                         <div class="form-group position-relative has-icon-left mb-4">
-                                            <input type="text" class="form-control form-control-xl" placeholder="Apellido paterno" style="background-color: #F2F5FA;">
+                                            <input type="text" class="form-control form-control-xl" placeholder="Apellido paterno" value="Flores" style="background-color: #F2F5FA;">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-person"></i>
                                             </div>
                                         </div>
                                         <div class="form-group position-relative has-icon-left mb-4">
-                                            <input type="text" class="form-control form-control-xl" placeholder="Apellido materno" style="background-color: #F2F5FA;">
+                                            <input type="text" class="form-control form-control-xl" placeholder="Apellido materno" value="Diaz"  style="background-color: #F2F5FA;">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-person"></i>
                                             </div>
@@ -138,8 +143,7 @@
                                                 <i class="bi bi-shield-lock"></i>
                                             </div>
                                         </div>
-                                        <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5" style="background-color: #2DCCCD;">Buscar</button>
-                                    </form>
+                                        <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5" style="background-color: #2DCCCD;" onclick="llena()">Buscar</button>
                                 </div>
 
                             
@@ -151,8 +155,9 @@
                             <div class="card-content" style="background-color:#FFFFFF; border-radius: 10px;">
                                 <div class="card-body">
                                     <h4>Perfil del usuario</h4>
-                                    <div class="col-12 col-xl-8">
-                                        <img src="assets/images/samples/Tarjeta.png" alt="tarjeta" class="aline-center">
+                                    <div class="col-12 col-xl-12 p-3" style="position: relative;     margin-bottom: 10px;">
+                                        <img src="assets/images/samples/Tarjeta.png" alt="tarjeta" class="aline-center" style="width: 100%;">
+                                        <h6 style="left: 10%;color: white;position: absolute;bottom: 10%;" id="buscName"></h6>
                                     </div>
                                     <div class="row" width="50">
                                         <div class="col-2">
@@ -161,42 +166,42 @@
                                         </div>
                                          <div class="col-10">
                                             <h5>Bancos de los que es cliente</h5>
-                                            <h6>BBVA, CITI</h6>
+                                            <h6 id="buscBancos"></h6>
                                          </div>   
                                     </div>
                                     
-                                    <div class="row" width="70">
+                                    <div class="row my-3" width="70">
                                         <div class="col-2">
                                             <img src="assets/images/icon contracargo.png" alt="contracargo" >
                                         </div>
                                         <div class="col-10">
                                             <h5>Número total de contracargos</h5>
-                                            <h6>10</h6>
+                                            <h6 id="buscContracargos"></h6>
                                         </div>
                                         
                                     </div>
-                                    <div class="row">
+                                    <div class="row my-3">
                                         <div class="col-2">
                                             <img src="assets/images/icon tarjeta.png" alt="tarjetaIcon" >
                                             
                                         </div>
                                         <div class="col-10">
                                             <h5>Número de tarjetas</h5>
-                                            <h6>2</h6>
+                                            <h6 id="buscTarjeta"></h6>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row my-3">
                                         <div class="col-2">
                                             <img src="assets/images/icon estrella.png" alt="Score" >
                                             
                                         </div>
                                         <div class="col-10">
                                             <h5>Score</h5>
-                                            <h6>90%</h6>
+                                            <h6 id="buscScore"></h6>
                                         </div>
                                     </div>
                                     <div class="px-4">
-                                        <button class='btn btn-block btn-xl btn-light-primary font-bold mt-3' style="background-color: #2DCCCD;"  onclick="nivelesUser()">Más detalles</button>
+                                        <a class='btn btn-block btn-xl btn-light-primary font-bold mt-3' style="background-color: #2DCCCD;"  href="2021PerfilUser.html">Más detalles</a>
                                     </div>
                                 </div>
                             </div>
@@ -211,7 +216,7 @@
                         <p>Hackaton 2021</p>
                     </div>
                     <div class="float-end">
-                        <p>Dynamite Remastered <span class="text-danger"><i class="bi bi-heart"></i></span> 
+                        <p>Made with <i class="bi bi-heart"></i> by Dynamite <span class="text-danger"></span> Remastered </p> 
                     </div>
                 </div>
             </footer>
@@ -224,6 +229,18 @@
     <script src="assets/js/pages/dashboard.js"></script>
 
     <script src="assets/js/mazer.js"></script>
+
+    <script>
+
+        function llena(){
+            document.getElementById("buscName").innerHTML = "Daniel Flores Diaz";
+            document.getElementById("buscBancos").innerHTML = "BBVA, CITI";
+            document.getElementById("buscContracargos").innerHTML = "5";
+            document.getElementById("buscTarjeta").innerHTML = "2";
+            document.getElementById("buscScore").innerHTML = "90%";
+        }
+
+    </script>
 </body>
 
 </html>

@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buró de Contracargos</title>
-    
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
-    
-<link rel="stylesheet" href="assets/vendors/iconly/bold.css">
+
+    <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
 
     <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
@@ -25,7 +25,7 @@
                 <div class="sidebar-header" style="background-color: #072146;">
                     <div class="d-flex justify-content-between">
                         <div class="logo">
-                            <a href="index.html"><img src="assets/images/logo/LogoCC100.png" alt="Logo" ></a>
+                            <a href="index.html"><img src="assets/images/logo/LogoCC100.png" alt="Logo"></a>
                         </div>
                         <div class="toggler">
                             <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -35,39 +35,35 @@
                 <div class="sidebar-menu">
                     <ul class="menu">
                         <li class="sidebar-title" style="color: #2DCCCD;">Menu</li>
-                        
-                        <li
-                            class="sidebar-item active ">
+
+                        <li class="sidebar-item active ">
                             <a href="index.html" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span style="color: #2DCCCD;">Dashboard</span>
                             </a>
                         </li>
-                        
-                        <li
-                            class="sidebar-item">
+
+                        <li class="sidebar-item">
                             <a href="2021buscador.html" class='sidebar-link'>
                                 <i class="bi bi-stack"></i>
                                 <span style="color: #2DCCCD;">Buscador</span>
                             </a>
                         </li>
-                        
-                        <li
-                            class="sidebar-item">
+
+                        <li class="sidebar-item">
                             <a href="2021DarAcceso.html" class='sidebar-link'>
-                            <i class="bi bi-collection-fill"></i>
+                                <i class="bi bi-collection-fill"></i>
                                 <span style="color: #2DCCCD;">Dar acceso</span>
                             </a>
                         </li>
-                        
-                        <li
-                            class="sidebar-item">
+
+                        <li class="sidebar-item">
                             <a href="2021SubirInfo" class='sidebar-link'>
                                 <i class="bi bi-grid-1x2-fill"></i>
                                 <span style="color: #2DCCCD;">Subir información</span>
                             </a>
                         </li>
-                        
+
                     </ul>
                 </div>
                 <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
@@ -76,109 +72,145 @@
         <div id="main">
             <div class="myDiv" style="background-color: #2DCCCD;">
                 <div class="d-flex justify-content-between">
-                    
+
                 </div>
             </div>
 
-            <header class="mb-3" >
+            <header class="mb-3">
                 <a href="#" class="burger-btn d-block d-xl-none">
                     <i class="bi bi-justify fs-3"></i>
                 </a>
             </header>
-            
+
             <div class="page-heading">
                 <h3>Dashboard</h3>
             </div>
             <div class="page-content">
                 <!--<section class="row">-->
-                    <!--<div class="col-12 col-lg-9">-->
-                        <div class="row">
-                            <div class="col-6 col-lg-3 col-md-6">
-                                <div class="card">
-                                    <div class="card-body px-3 py-4-5">
-                                        <div class="col-md">
-                                            <h6 class="text-muted font-semibold"  style= "text-align:center">Contracargos por banco en el último año</h6>
-                                            <h6 class="font-extrabold mb-0">BBVA:       112</h6>
-                                            <h6 class="font-extrabold mb-0">CITI:       112</h6>
-                                            <h6 class="font-extrabold mb-0">OPENPAY:    112</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-3 col-md-6">
-                                <div class="card">
-                                    <div class="card-body px-3 py-4-5">                                        
-                                        <div class="col-md">
-                                            <h6 class="text-muted font-semibold" style= "text-align:center">Contracargos en los últimos 90 días</h6>
-                                            <div class="card-body">
-                                                <div id="chart-profile-visit"></div>
-                                            </div>
-                                        </div>                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-3 col-md-6">
-                                <div class="card">
-                                    <div class="card-body px-3 py-4-5">
-                                        <div class="col-md">
-                                            <h6 class="text-muted font-semibold"  style= "text-align:center">Principales BIN con contracargos</h6>
-                                            <h6 class="font-extrabold mb-0">123456:     112</h6>
-                                            <h6 class="font-extrabold mb-0">789654:     112</h6>
-                                            <h6 class="font-extrabold mb-0">456321:     112</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-3 col-md-6">
-                                <div class="card">
-                                    <div class="card-body px-3 py-4-5">
-                                        <div class="col-md">
-                                            <h6 class="text-muted font-semibold"  style= "text-align:center">Clientes con más contracargos</h6>
-                                            <h6 class="font-extrabold mb-0">Andree: 112</h6>
-                                            <h6 class="font-extrabold mb-0">Mary:   112</h6>
-                                            <h6 class="font-extrabold mb-0">Eva:    112</h6>
-                                        </div>
-                                    </div>
+                <!--<div class="col-12 col-lg-9">-->
+                <div class="row">
+                    <div class="col-6 col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body px-3 py-4-5">
+                                <div class="col-md">
+                                    <h6 class="text-muted font-semibold" style="text-align:center">Contracargos por
+                                        banco en el último año</h6>
+
+                                    
+                                        <h6 class="font-extrabold mb-0">BBVA:       4122</h6>
+                                        <h6 class="font-extrabold mb-0">CITI:       3121</h6>
+                                        <h6 class="font-extrabold mb-0">OPENPAY:    2123</h6>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-12 ">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4>Estados con más % de contracargos</h4>
-                                    </div>
+                    </div>
+                    <div class="col-6 col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body px-3 py-4-5">
+                                <div class="col-md">
+                                    <h6 class="text-muted font-semibold" style="text-align:center">Principales BIN con
+                                        contracargos</h6>
+                                    <h6 class="font-extrabold mb-0">123456: 112</h6>
+                                    <h6 class="font-extrabold mb-0">789654: 112</h6>
+                                    <h6 class="font-extrabold mb-0">456321: 112</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-6 col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body px-3 py-4-5">
+                                <div class="col-md">
+                                    <h6 class="text-muted font-semibold" style="text-align:center">Clientes con más
+                                        contracargos</h6>
+                                    <h6 class="font-extrabold mb-0">Andree: 112</h6>
+                                    <h6 class="font-extrabold mb-0">Mary: 112</h6>
+                                    <h6 class="font-extrabold mb-0">Eva: 112</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body px-3 py-4-5">
+                                <div class="col-md">
+                                    <h6 class="text-muted font-semibold" style="text-align:center">Comercios con más contracargos</h6>
+                                    <h6 class="font-extrabold mb-0">MercadoLibre: 11212</h6>
+                                    <h6 class="font-extrabold mb-0">Amazon: 1312</h6>
+                                    <h6 class="font-extrabold mb-0">Alibaba: 300</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-lg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-body px-3 py-4-5">
+                                <div class="col-md">
+                                    <h6 class="text-muted font-semibold" style="text-align:center">Contracargos en los
+                                        últimos 90 días</h6>
                                     <div class="card-body">
-                                        
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-xl-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4>Niveles de contracargo por giro de comercio</h4>
-                                    </div>
-                                    <div class="card-body"> 
-                                        <div id="chart-visitors-profile"></div> 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-xl-8">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4>Niveles de contracargo por tipo de tarjeta</h4>
-                                    </div>
-                                    <div class="card-body"> 
-                                        <div id="chart-visitors-profile"></div> 
+                                        <div id="chart-profile-visit"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    <!--</div>-->
-                    <!--<div class="col-12 col-lg-3">
+                    </div>
+                </div>
+
+                
+                <div class="row">
+                    <div class="col-12 ">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Estados con más % de contracargos</h4>
+                            </div>
+                            <div class="card-body">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-xl-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Niveles de contracargo por giro de comercio</h4>
+                            </div>
+                            <div class="card-body">
+                                <div id="chart-visitors-profile"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Niveles de contracargo por tipo de tarjeta</h4>
+                            </div>
+                            <div class="card-body">
+                                <div id="chart-Nivelesdcontracargpotipdtarjeta"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Contracargos por tipo de comercio</h4>
+                            </div>
+                            <div class="card-body">
+                                <div id="chart-Nivelesdcontracargpotipdcomercio"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--</div>-->
+                <!--<div class="col-12 col-lg-3">
                         <div class="card">
                             <div class="card-body py-4 px-5">
                                 <div class="d-flex align-items-center">
@@ -192,23 +224,8 @@
                                 </div>
                             </div>
                         </div>-->
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Contracargos por tipo de comercio</h4>
-                            </div>
-                            <div class="card-body">
-                                <div id="chart-visitors-profile"></div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Visitors Profile</h4>
-                            </div>
-                            <div class="card-body">
-                                <div id="chart-visitors-profile"></div>
-                            </div>
-                        </div>
-                    <!--</div>-->
+                
+                <!--</div>-->
                 <!--</section>-->
             </div>
 
@@ -218,7 +235,7 @@
                         <p>Hackaton 2021</p>
                     </div>
                     <div class="float-end">
-                        <p>Dynamite <span class="text-danger"><i class="bi bi-heart"></i></span> Remastered </p>
+                        <p>Made with <i class="bi bi-heart"></i> by Dynamite <span class="text-danger"></span> Remastered </p>
                     </div>
                 </div>
             </footer>
@@ -226,11 +243,16 @@
     </div>
     <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-    
+
     <script src="assets/vendors/apexcharts/apexcharts.js"></script>
     <script src="assets/js/pages/dashboard.js"></script>
 
     <script src="assets/js/mazer.js"></script>
+
+    <script>
+
+    </script>
+
 </body>
 
 </html>
