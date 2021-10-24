@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buró de Contracargos</title>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    
+<link rel="stylesheet" href="assets/vendors/iconly/bold.css">
+
+    <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <!--<link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">-->
+</head>
+<body>
+    <div id="app">
+        <div id="sidebar" class="active" style="background-color: #072146;">
+            <div class="sidebar-wrapper active" style="background-color: #072146;">
+                <div class="sidebar-header" style="background-color: #072146;">
+                    <div class="d-flex justify-content-between">
+                        <div class="logo">
+                            <a href="index.html"><img src="assets/images/logo/LogoCC100.png" alt="Logo" ></a>
+                        </div>
+                        <div class="toggler">
+                            <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-menu">
+                    <ul class="menu">
+                        <li class="sidebar-title" style="color: #2DCCCD;">Menu</li>
+                        
+                        <li
+                            class="sidebar-item ">
+                            <a href="index.html" class='sidebar-link'>
+                                <i class="bi bi-grid-fill"></i>
+                                <span style="color: #2DCCCD;">Dashboard</span>
+                            </a>
+                        </li>
+                        
+                        <li
+                            class="sidebar-item ">
+                            <a href="2021buscador.html" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
+                                <span style="color: #2DCCCD;">Buscador</span>
+                            </a>
+                        </li>
+                        
+                        <li
+                            class="sidebar-item active">
+                            <a href="2021DarAcceso.html" class='sidebar-link'>
+                            <i class="bi bi-collection-fill"></i>
+                                <span style="color: #2DCCCD;">Dar acceso</span>
+                            </a>
+                        </li>
+                        
+                        <li
+                            class="sidebar-item">
+                            <a href="2021SubirInfo" class='sidebar-link'>
+                                <i class="bi bi-grid-1x2-fill"></i>
+                                <span style="color: #2DCCCD;">Subir información</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+            </div>
+        </div>
+        <div id="main">
+            <div class="myDiv" style="background-color: #2DCCCD;">
+                <div class="d-flex justify-content-between">
+                    
+                </div>
+            </div>
+
+            <header class="mb-3" >
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+    
+        <div class="page-heading">
+                <section class="section">
+                <div class="row" id="basic-table">
+                    <div class="col-12 col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">Miembros actuales</h2>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-body">
+                                    
+                                    <!-- Table with outer spacing -->
+                                    <div class="table-responsive">
+                                        <table class="table table-lg">
+                                            <thead>
+                                                <tr>
+                                                    <th>Estado</th>
+                                                    <th>Miembro</th>
+                                                    
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td ><img src="assets/images/circulo_verde.png"></img></td>
+                                                    <td>BBVA</td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                    <td ><img src="assets/images/circulo_verde.png"></img></td>
+                                                    <td>OPENPAY</td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                    <td ><img src="assets/images/circulo_amarillo.png"></img></td>
+                                                    <td>BANCOMER</td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                    <td ><img src="assets/images/circulo_gris.png"></img></td>
+                                                    <td>AMEX</td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                    <td ><img src="assets/images/circulo_gris.png"></img></td>
+                                                    <td>EXTERNO</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">Alguien quiere unirse...</h2>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <h4>Razón social</h4>
+                                    <input type="text" class="form-control form-control-xl" style="background-color: #F2F5FA;">
+                                    <h4>Procesador de pagos</h4>
+                                    <input type="text" class="form-control form-control-xl" style="background-color: #F2F5FA;">
+                                    <h4>Giro de negocios</h4>
+                                    <input type="text" class="form-control form-control-xl" style="background-color: #F2F5FA;">
+                                    <hr>
+                                    <button class="btn btn-primary btn-block btn-lg shadow-lg md-2" style="background-color: #2DCCCD;">Aceptar</button>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
