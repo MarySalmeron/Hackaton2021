@@ -61,7 +61,7 @@
                         
                         <li
                             class="sidebar-item">
-                            <a href="2021SubirInfo" class='sidebar-link'>
+                            <a href="2021SubirInfo.html" class='sidebar-link'>
                                 <i class="bi bi-grid-1x2-fill"></i>
                                 <span style="color: #2DCCCD;">Subir información</span>
                             </a>
@@ -101,7 +101,7 @@
                                         <table class="table table-lg">
                                             <thead>
                                                 <tr>
-                                                    <th>Estado</th>
+                                                    <th>Status</th>
                                                     <th>Miembro</th>
                                                     
                                                 </tr>
@@ -150,13 +150,19 @@
                             <div class="card-content">
                                 <div class="card-body">
                                     <h4>Razón social</h4>
-                                    <input type="text" class="form-control form-control-xl" style="background-color: #F2F5FA;">
+                                    <input type="text" id="RS" class="form-control form-control-xl" style="background-color: #F2F5FA;" value="Banco Nacional de México S.A.">
                                     <h4>Procesador de pagos</h4>
-                                    <input type="text" class="form-control form-control-xl" style="background-color: #F2F5FA;">
+                                    <input type="text" id="PP" class="form-control form-control-xl" style="background-color: #F2F5FA;" value="VISA">
                                     <h4>Giro de negocios</h4>
-                                    <input type="text" class="form-control form-control-xl" style="background-color: #F2F5FA;">
+                                    <input type="text" id="GN" class="form-control form-control-xl" style="background-color: #F2F5FA;" value="Bancario">
                                     <hr>
-                                    <button class="btn btn-primary btn-block btn-lg shadow-lg md-2" style="background-color: #2DCCCD;">Aceptar</button>
+                                    <div id="row">
+                                        <button class="btn btn-primary btn-block  shadow-lg " style="background-color: #2DCCCD;" onclick="agregar()">Aceptar</button>
+                                        <hr>
+                                        <button class="btn btn-primary btn-block  shadow-lg " style="background-color: #c50d0d;" onclick="agregar()">Declinar</button>
+                                    </div>
+                                    
+                                    
                                 </div>
                                
                             </div>
@@ -166,5 +172,13 @@
             </section>
         </div>
     </div>
+
+    <script>
+        function agregar(){    
+            document.getElementsById("RS").value = "";
+            document.getElementsById("PP").value = "";
+            document.getElementsById("GN").value = "";
+        }
+    </script>
 </body>
 </html>
