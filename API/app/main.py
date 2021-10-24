@@ -16,34 +16,32 @@ html = """
     </head>
     <body>
         <h1>WebSocket Chat</h1>
-        <form id="form" action="" onsubmit="sendMessage(event)">
+        <form action="" onsubmit="sendMessage(event)">
             <input type="text" id="messageText" autocomplete="off"/>
             <button>Send</button>
         </form>
         <ul id='messages'>
         </ul>
         <script>
-            var ws = new WebSocket("ws://137.184.155.141:8000/ws");
+            var ws = new WebSocket("ws://137.184.155.141:82/ws");
+            var envio;
             ws.onmessage = function(event) {
+                console.log((Date.now()-envio)/2);
                 var messages = document.getElementById('messages')
                 var message = document.createElement('li')
                 var content = document.createTextNode(event.data)
-                message.appendChild(content)
-                messages.appendChild(message)
             };
             function sendMessage(event) {
                 var input = document.getElementById("messageText")
+                envio = Date.now();
                 ws.send(input.value)
                 input.value = ''
                 event.preventDefault()
             }
-            const form = document.getElementById('form');
-            form.addEventListener('submit', sendMessage);
         </script>
     </body>
 </html>
 """
-
 
 app = FastAPI()
 
