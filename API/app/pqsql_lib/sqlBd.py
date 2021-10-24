@@ -1,4 +1,5 @@
 import psycopg2
+import psycopg2.extras
 from typing import Union
 
 class Bd():
@@ -9,7 +10,7 @@ class Bd():
   password = 'holamundo'
   database = 'dbcontracargos'
 
-  def __init__(self, database: str, hostname='dbcontracargos.cluster-cr3eijvzbpoy.us-east-2.rds.amazonaws.com', username='postgres', password=''):
+  def __init__(self, database: str, hostname='localhost', username='postgres', password=''):
     self.hostname=hostname
     self.username=username
     self.password=password
@@ -20,7 +21,7 @@ class Bd():
 
   def do_query(self, myQuery: str, returnAffectedRows=False) -> Union[tuple, dict]:
     myConnection = self.__connect()
-    cur = myConnection.cursor()
+    cur = myConnection.cursor(cursor_factory = psycopg2.extras.RealDictCursor)
     affected_rows = 0
     try:
       affected_rows = cur.execute( myQuery )
