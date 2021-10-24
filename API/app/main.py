@@ -8,6 +8,41 @@ import redis
 import os
 from typing import Optional
 
+description = """
+Buró de contracargos, reduciendo fraudes. 🚀
+
+## Rutas Score 
+
+Permite evaluar rápidamente una compra para aceptar o rechazar el cargo,
+el score devuelto son el porcentaje de Personas, Comercios, Nombres de Comprador, etc. 
+con la misma cantidad o menos de contracargos en el lapso de tiempo.
+
+## Buscar Persona
+
+Permite análizar un perfil o perfiles con la busqueda realizada, permitiendo 
+detectar extraños comportamientos. Al agregar el campo de RFC este nos permite
+eliminar homónimos en la búsqueda mejorando la calidad de los resultados.
+
+## Dashboard
+
+Devuelve todos los datos necesarios para llenar el Dashboard, de esta manera 
+al ser un objeto completo se reducen las peticions ( sin hacer petición por cada componente ).
+
+## Token y User
+
+Proceso de login Oauth 2.0, usuario de prueba:
+
+Usuario: gustavo
+Password: secret
+
+## dbTest
+
+Permite hacer una prueba a la base de datos, devolviendo todos los datos actuales.
+
+*Las rutas actualmente envian modelos de los datos sin hacer peticiones con la excepción de dbTest
+
+"""
+
 
 class Persona(BaseModel):
     RFC: Optional[str] = None
@@ -56,7 +91,7 @@ html = """
         <ul id='messages'>
         </ul>
         <script>
-            var ws = new WebSocket("ws://137.184.155.141:82/ws");
+            var ws = new WebSocket("wss://hackatonbbva.g-cs.dev/ws");
             var envio;
             ws.onmessage = function(event) {
                 console.log((Date.now()-envio)/2);
@@ -78,33 +113,26 @@ html = """
 </html>
 """
 
-app = FastAPI()
+app = FastAPI(
+    title="Buró de Contracargos",
+    description=description,
+    version="0.0.1",
+    terms_of_service="http://example.com/terms/",
+    contact={
+        "name": "Deadpoolio the Amazing",
+        "url": "http://x-force.example.com/contact/",
+        "email": "dp@x-force.example.com",
+    },
+    license_info={
+        "name": "Apache 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0.html",
+    },
+)
 
 @app.get("/")
 async def get():
     return HTMLResponse(html)
 
-@app.post("/buscar/persona/", response_model=Persona)
-async def buscarPersona(Persona: Persona):
-    Persona = Persona(
-        id='123',
-        RFC="ROMG9887765M5",
-        Nombres="Gustavo",
-        Apellido_Paterno="Robles",
-        Apellido_Materno="Martínez",
-        Telefono="556667778877",
-        Correo_Electronico="hi@gus.works",
-        Codigo_Postal="09212",
-        Numero_Tarjetas="5",
-        Bancos_Cliente="BBVA,Santander",
-        Estado="Ciudad de México",
-        Ciudad="Coyoacán",
-        Score="80%",
-        Detalle=[
-
-        ]
-    )
-    return Persona
 
 @app.get("/score/comercio/{comercio}", response_model=Score)
 async def read_score_comercio(comercio: str):
@@ -138,6 +166,30 @@ async def buscarQuery(Query: Query):
         Tiempo90Dias = "10%"
     )
 
+@app.post("/buscar/persona/", response_model=Persona)
+async def buscarPersona(Persona: Persona):
+    Persona = Persona(
+        id='123',
+        RFC="ROMG9887765M5",
+        Nombres="Gustavo",
+        Apellido_Paterno="Robles",
+        Apellido_Materno="Martínez",
+        Telefono="556667778877",
+        Correo_Electronico="hi@gus.works",
+        Codigo_Postal="09212",
+        Numero_Tarjetas="5",
+        Bancos_Cliente="BBVA,Santander",
+        Estado="Ciudad de México",
+        Ciudad="Coyoacán",
+        Score="80%",
+        Detalle=[
+
+        ]
+    )
+    return Persona
+
+
+
 
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
@@ -147,10 +199,6 @@ async def websocket_endpoint(websocket: WebSocket):
         await websocket.send_text(f"Message text was: {data}")
 
 #Niveles de contracargos por banco o procesador
-
-@app.get("/buscador")
-async def get():
-    return HTMLResponse(html)
 
 
 @app.get("/Dashboard")
@@ -171,13 +219,11 @@ def read_root():
     }
 
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Optional[str] = None):
-    return {"item_id": item_id, "q": q}
+
 
 
 ### ENDPOINTS para consultar Cosas del buró
-@app.get("/items")
+@app.get("/dbTest")
 def tests_db(q: Optional[str] = None):
     bd = Bd(
         'postgres',
