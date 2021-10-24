@@ -45,7 +45,6 @@ html = """
 </html>
 """
 
-
 app = FastAPI()
 
 @app.get("/")
@@ -89,15 +88,12 @@ def read_item(item_id: int, q: Optional[str] = None):
 @app.get("/items")
 def tests_db(q: Optional[str] = None):
     bd = Bd(
-        'hackathon_BBVA_2021',
-        # 'databasehackathon.cluster-ro-cr3eijvzbpoy.us-east-2.rds.amazonaws.com', #reader
-        # 'databasehackathon-instance-1.cr3eijvzbpoy.us-east-2.rds.amazonaws.com', #writer
-        'dbcontracargos.cluster-cr3eijvzbpoy.us-east-2.rds.amazonaws.com', #writer
-        'postgresql',
+        'postgres',
+        'database-2-instance-1.cr3eijvzbpoy.us-east-2.rds.amazonaws.com', #writer
+        'postgres',
         'holamundo',
         )
-    result = bd.do_query('SELECT * from opportunities LIMIT 10;', returnAffectedRows=True)
-    print(result)
+    result = bd.do_query('SELECT * from contracargosact LIMIT 10;', returnAffectedRows=True)
     return {"results": result}
 
 
