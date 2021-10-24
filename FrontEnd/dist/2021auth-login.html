@@ -10,88 +10,25 @@
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="assets/css/pages/auth.css">
+
+    <style>
+        html, 
+        body {
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body>
     
-    <div id="app">
-        <div id="sidebar" class="active" style="background-color: #072146;">
-            <div class="sidebar-wrapper active" style="background-color: #072146;">
-                <div class="sidebar-header" style="background-color: #072146;">
-                    <div class="d-flex justify-content-between">
-                        <div class="logo">
-                            <a href="index.html"><img src="assets/images/logo/LogoCC100.png" alt="Logo" ></a>
-                        </div>
-                        <div class="toggler">
-                            <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="sidebar-menu">
-                    <ul class="menu">
-                        <li class="sidebar-title" style="color: #2DCCCD;">Menu</li>
-                        
-                        <li
-                            class="sidebar-item active ">
-                            <a href="index.html" class='sidebar-link'>
-                                <i class="bi bi-grid-fill"></i>
-                                <span style="color: #2DCCCD;">Dashboard</span>
-                            </a>
-                        </li>
-                        
-                        <li
-                            class="sidebar-item">
-                            <a href="index.html" class='sidebar-link'>
-                                <i class="bi bi-stack"></i>
-                                <span style="color: #2DCCCD;">Buscador</span>
-                            </a>
-                        </li>
-                        
-                        <li
-                            class="sidebar-item">
-                            <a href="index.html" class='sidebar-link'>
-                            <i class="bi bi-collection-fill"></i>
-                                <span style="color: #2DCCCD;">Dar acceso</span>
-                            </a>
-                        </li>
-                        
-                        <li
-                            class="sidebar-item">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-grid-1x2-fill"></i>
-                                <span style="color: #2DCCCD;">Subir información</span>
-                            </a>
-                        </li>
-                        
-                    </ul>
-                </div>
-                <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
-            </div>
-        </div>
-        <div id="main">
-            <div class="myDiv" style="background-color: #2DCCCD;">
-                <div class="d-flex justify-content-between">
-                    
-                </div>
-            </div>
-
-            <header class="mb-3" >
-                <a href="#" class="burger-btn d-block d-xl-none">
-                    <i class="bi bi-justify fs-3"></i>
-                </a>
-            </header>
-            
-            <div class="page-heading">
-                <h3>Dashboard</h3>
-            </div>
-        
+    <div id="app" class="h-100">
         <div class="row h-100" >
-            <div class="col-lg-5 col-12 auth-logo-size" style="background:linear-gradient(230deg, rgba(7,33,70,1) 0%, rgba(4,91,140,1) 100%);">
+            <div class="col-lg-5 col-12 auth-logo-size h-100" style="background:linear-gradient(230deg, rgba(7,33,70,1) 0%, rgba(4,91,140,1) 100%); display: flex; justify-content: center; align-items: center;">
                 <!--<div class="col-lg-5 col-12">-->
                     <img src="assets/images/logo/LogoCC100.png" alt="Logo">
                    
             </div>
-            <div class="col-lg-7 d-none d-lg-block">
+            <div class="col-lg-7 h-100" style="display: flex;align-items: center;justify-content: center;">
                 <div id="auth-right">
                     <h1 class="auth-title">Bienvenido</h1>
                     <p class="auth-subtitle mb-5">Únete con el código de afiliación</p>

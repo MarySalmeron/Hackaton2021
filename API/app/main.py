@@ -2,8 +2,24 @@ from typing import Optional
 from fastapi import FastAPI, Request, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse
 from app.pqsql_lib.sqlBd import Bd
+from pydantic import BaseModel
 import redis
 import os
+
+class Persona(BaseModel):
+    RFC: Optional[str] = None
+    Nombres: Optional[str] = None
+    Apellido_Paterno: Optional[str] = None
+    Apellido_Materno: Optional[str] = None
+    Telefono: Optional[str] = None
+    Correo_Electronico: Optional[str] = None
+    Codigo_Postal: Optional[str] = None
+    Numero_Tarjetas: Optional[str] = None
+    Bancos_Cliente: Optional[str] = None
+    Estado: Optional[str] = None
+    Ciudad: Optional[str] = None
+    Score: Optional[str] = None
+    Detalle: Optional[list] = None
 
 r = redis.Redis(host=os.getenv('REDIS_URL'), port=6379, db=0)
 r.set('foo', 1)
@@ -51,6 +67,28 @@ app = FastAPI()
 async def get():
     return HTMLResponse(html)
 
+@app.post("/buscar/persona/")
+async def buscarPersona(Persona: Persona):
+    Persona = Persona(
+        id='123',
+        RFC="ROMG9887765M5",
+    Nombres="Gustavo",
+    Apellido_Paterno="Robles",
+    Apellido_Materno="Martínez",
+    Telefono="556667778877",
+    Correo_Electronico="hi@gus.works",
+    Codigo_Postal="09212",
+    Numero_Tarjetas="5",
+    Bancos_Cliente="BBVA,Santander",
+    Estado="Ciudad de México",
+    Ciudad="Coyoacán",
+    Score="80%",
+    Detalle=[
+
+    ]
+    )
+    return Persona
+
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
@@ -59,6 +97,10 @@ async def websocket_endpoint(websocket: WebSocket):
         await websocket.send_text(f"Message text was: {data}")
 
 #Niveles de contracargos por banco o procesador
+
+@app.get("/buscador")
+async def get():
+    return HTMLResponse(html)
 
 
 @app.get("/Dashboard")
