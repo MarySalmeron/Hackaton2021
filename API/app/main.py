@@ -16,17 +16,15 @@ html = """
     </head>
     <body>
         <h1>WebSocket Chat</h1>
-        <form action="" onsubmit="sendMessage(event)">
+        <form id="form" action="" onsubmit="sendMessage(event)">
             <input type="text" id="messageText" autocomplete="off"/>
             <button>Send</button>
         </form>
         <ul id='messages'>
         </ul>
         <script>
-            var ws = new WebSocket("ws://137.184.155.141:82/ws");
-            var envio;
+            var ws = new WebSocket("ws://137.184.155.141:8000/ws");
             ws.onmessage = function(event) {
-                console.log((Date.now()-envio)/2);
                 var messages = document.getElementById('messages')
                 var message = document.createElement('li')
                 var content = document.createTextNode(event.data)
@@ -35,11 +33,12 @@ html = """
             };
             function sendMessage(event) {
                 var input = document.getElementById("messageText")
-                envio = Date.now();
                 ws.send(input.value)
                 input.value = ''
                 event.preventDefault()
             }
+            const form = document.getElementById('form');
+            form.addEventListener('submit', sendMessage);
         </script>
     </body>
 </html>
@@ -89,15 +88,12 @@ def read_item(item_id: int, q: Optional[str] = None):
 @app.get("/items")
 def tests_db(q: Optional[str] = None):
     bd = Bd(
-        'hackathon_BBVA_2021',
-        # 'databasehackathon.cluster-ro-cr3eijvzbpoy.us-east-2.rds.amazonaws.com', #reader
-        # 'databasehackathon-instance-1.cr3eijvzbpoy.us-east-2.rds.amazonaws.com', #writer
-        'dbcontracargos.cluster-cr3eijvzbpoy.us-east-2.rds.amazonaws.com', #writer
-        'postgresql',
+        'postgres',
+        'database-2-instance-1.cr3eijvzbpoy.us-east-2.rds.amazonaws.com', #writer
+        'postgres',
         'holamundo',
         )
-    result = bd.do_query('SELECT * from opportunities LIMIT 10;', returnAffectedRows=True)
-    print(result)
+    result = bd.do_query('SELECT * from contracargosact LIMIT 10;', returnAffectedRows=True)
     return {"results": result}
 
 
