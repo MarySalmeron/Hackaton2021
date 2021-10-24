@@ -5,6 +5,15 @@ from app.pqsql_lib.sqlBd import Bd
 import redis
 import os
 
+bd = Bd(
+        'dbcontracargos',
+        'dbcontracargos.cluster-cr3eijvzbpoy.us-east-2.rds.amazonaws.com',
+        'postgres',
+        'holamundo',
+        )
+    result = bd.do_query('SELECT * from opportunities LIMIT 10;', returnAffectedRows=True)
+    print(result)
+
 r = redis.Redis(host=os.getenv('REDIS_URL'), port=6379, db=0)
 r.set('foo', 1)
 
@@ -88,8 +97,12 @@ def read_item(item_id: int, q: Optional[str] = None):
 ### ENDPOINTS para consultar Cosas del buró
 @app.get("/items")
 def tests_db(q: Optional[str] = None):
-    bd = Bd('instruments_dev', 'localhost', 'postgres', 'postgres')
-    result = bd.do_query('SELECT * from opportunities LIMIT 10;', returnAffectedRows=True)
+    bd = bd = Bd(
+        'postgres',
+        'database-2-instance-1.cr3eijvzbpoy.us-east-2.rds.amazonaws.com', #writer
+        'postgres',
+        'holamundo')
+    result = bd.do_query('SELECT * from contracargosact LIMIT 10;', returnAffectedRows=True)
     print(result)
     return {"results": result}
 

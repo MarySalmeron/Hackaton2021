@@ -1,11 +1,9 @@
 {
   "lastVisited": {
-    "url": "/hackaton",
+    "url": "/config/workspace",
     "workspace": false
   },
-  "query": {
-    "folder": "/hackaton"
-  },
+  "query": {},
   "update": {
     "checked": 1635013177435,
     "version": "3.12.0"

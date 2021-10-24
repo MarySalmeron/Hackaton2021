@@ -9,7 +9,7 @@ class Bd():
   password = 'holamundo'
   database = 'dbcontracargos'
 
-  def __init__(self, database: str, hostname='localhost', username='postgres', password=''):
+  def __init__(self, database: str, hostname='dbcontracargos.cluster-cr3eijvzbpoy.us-east-2.rds.amazonaws.com', username='postgres', password=''):
     self.hostname=hostname
     self.username=username
     self.password=password

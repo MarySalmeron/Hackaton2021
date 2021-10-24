@@ -38,6 +38,7 @@ services:
   backend:
     build : .
     restart: always
+    container_name: backend
     user: root
     environment:
       - TZ= America/Mexico_City
@@ -45,15 +46,13 @@ services:
     volumes:
       - ./app:/code/app
     ports:
-      - "82:80"
-      - "8000:8000"
+      - "8080:80"
     depends_on:
      - redis
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.backend.rule=(Host(`hackatonbbva.g-cs.dev`))"
       - "traefik.http.routers.backend.entrypoints=websecure"
-      - "traefik.http.routers.backend.entrypoints=web"
       - "traefik.http.routers.backend.tls.certresolver=myresolver"
       - "traefik.http.services.backendService.loadbalancer.server.port=80"
 
