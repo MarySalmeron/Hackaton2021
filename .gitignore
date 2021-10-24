@@ -1,2 +1,3 @@
-API/traefik/*
-API/vscode/*
+API/traefik/
+API/vscode/
+API/app/__pycache__/

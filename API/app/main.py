@@ -5,15 +5,6 @@ from app.pqsql_lib.sqlBd import Bd
 import redis
 import os
 
-bd = Bd(
-        'dbcontracargos',
-        'dbcontracargos.cluster-cr3eijvzbpoy.us-east-2.rds.amazonaws.com',
-        'postgres',
-        'holamundo',
-        )
-    result = bd.do_query('SELECT * from opportunities LIMIT 10;', returnAffectedRows=True)
-    print(result)
-
 r = redis.Redis(host=os.getenv('REDIS_URL'), port=6379, db=0)
 r.set('foo', 1)
 
