@@ -14,6 +14,9 @@
 Toda lo trabajado esta hecho en Docker y Docker-Compose, permitiendo hacer un replicado del
 servicio facilmente. 
 
+# Frontend
+
+Habílitamos diversas vistas para mostrar la interfaz que esperaríamos para el analísta de los casos de contracargos.
 
 # Backend
 
