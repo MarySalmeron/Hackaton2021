@@ -13,8 +13,7 @@ description = """
 ## Buró de contracargos, reduciendo fraudes. 🚀
 # Bienvenido al Backend
 
-[Visitar Fronend : https://frontend.hackatonbbva.g-cs.dev/2021auth-login.html ](https://frontend.hackatonbbva.g-cs.dev/2021auth-login.html)
-
+[Visitar Frontend : https://frontend.hackatonbbva.g-cs.dev/2021auth-login.html ](https://frontend.hackatonbbva.g-cs.dev/2021auth-login.html)
 
 ## Rutas Score 
 
