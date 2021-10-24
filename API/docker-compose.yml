@@ -60,30 +60,20 @@ services:
     image: redis:latest
     container_name: cache
     
-    
 
-  code-server:
-    image: lscr.io/linuxserver/code-server
-    container_name: code-server
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Mexico_City
-      - PASSWORD=Hackaton2021@MEGAG #optional
-#      - HASHED_PASSWORD= #optional
-      - SUDO_PASSWORD=Hackaton2021@MEGAG #optional
-#      - SUDO_PASSWORD_HASH= #optional
-      - PROXY_DOMAIN=code.hackatonbbva.g-cs.dev #optional
-    volumes:
-      - ./vscode/config:/config
-      - /root/Hackaton2021/:/hackaton/
-    ports:
-      - 8443:8443
-    restart: unless-stopped
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.code.rule=(Host(`code.hackatonbbva.g-cs.dev`))"
-      - "traefik.http.routers.code.entrypoints=websecure"
-      - "traefik.http.routers.code.tls.certresolver=myresolver"
-      - "traefik.http.services.codeService.loadbalancer.server.port=8443"
+  httpd:
+      container_name: frontend
+      ports:
+          - '9000:80'
+      volumes:
+          - '../FrontEnd/dist:/usr/local/apache2/htdocs/'
+      image: 'httpd:2.4'
+      restart: unless-stopped
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.frontend.rule=(Host(`frontend.hackatonbbva.g-cs.dev`))"
+        - "traefik.http.routers.frontend.entrypoints=websecure"
+        - "traefik.http.routers.frontend.tls.certresolver=myresolver"
+        - "traefik.http.services.frontendService.loadbalancer.server.port=80"
+
 

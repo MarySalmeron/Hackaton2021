@@ -1,5 +1,6 @@
 from typing import Optional
 from fastapi import FastAPI, Request, WebSocket, WebSocketDisconnect, Depends, HTTPException, status
+from starlette.responses import RedirectResponse
 from fastapi.responses import HTMLResponse
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from app.pqsql_lib.sqlBd import Bd
@@ -9,7 +10,11 @@ import os
 from typing import Optional
 
 description = """
-Buró de contracargos, reduciendo fraudes. 🚀
+## Buró de contracargos, reduciendo fraudes. 🚀
+# Bienvenido al Backend
+
+[Visitar Fronend : https://frontend.hackatonbbva.g-cs.dev/2021auth-login.html ](https://frontend.hackatonbbva.g-cs.dev/2021auth-login.html)
+
 
 ## Rutas Score 
 
@@ -39,7 +44,21 @@ Password: secret
 
 Permite hacer una prueba a la base de datos, devolviendo todos los datos actuales.
 
-*Las rutas actualmente envian modelos de los datos sin hacer peticiones con la excepción de dbTest
+## ws
+
+Permite el conectarse por websocket y mandar las peticiones por este socket para reducir 
+los tiempos de respuesta.
+
+# Deployment
+
+Toda lo trabajado esta hecho en Docker y Docker-Compose, permitiendo hacer un replicado del
+servicio facilmente. 
+
+### Letras Chiquititas
+
+*Las rutas actualmente envian modelos de los datos sin hacer peticiones con la excepción de dbTest. 
+
+*Esta activo el servicio de redis, sin guardar peticiones.
 
 """
 
@@ -117,21 +136,14 @@ app = FastAPI(
     title="Buró de Contracargos",
     description=description,
     version="0.0.1",
-    terms_of_service="http://example.com/terms/",
     contact={
-        "name": "Deadpoolio the Amazing",
-        "url": "http://x-force.example.com/contact/",
-        "email": "dp@x-force.example.com",
+        "name": "Dynamite Remastered",
+        "email": "Dynamite-Remastered@g-cs.dev",
     },
     license_info={
-        "name": "Apache 2.0",
-        "url": "https://www.apache.org/licenses/LICENSE-2.0.html",
+        "name": "Por definir",
     },
 )
-
-@app.get("/")
-async def get():
-    return HTMLResponse(html)
 
 
 @app.get("/score/comercio/{comercio}", response_model=Score)
@@ -248,10 +260,10 @@ fake_users_db = {
         "hashed_password": "fakehashedsecret",
         "disabled": False,
     },
-    "alice": {
-        "username": "alice",
-        "full_name": "Alice Wonderson",
-        "email": "alice@example.com",
+    "maria": {
+        "username": "maria",
+        "full_name": "María José",
+        "email": "alice@bbva.com",
         "hashed_password": "fakehashedsecret2",
         "disabled": True,
     },
@@ -324,3 +336,9 @@ async def read_users_me(current_user: User = Depends(get_current_active_user)):
     return current_user
 
 ### 
+
+
+@app.get("/")
+async def redirect():
+    response = RedirectResponse(url='/docs')
+    return response
