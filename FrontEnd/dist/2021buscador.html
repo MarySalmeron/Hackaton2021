@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buró de Contracargos</title>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    
+<link rel="stylesheet" href="assets/vendors/iconly/bold.css">
+
+    <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <!--<link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">-->
+</head>
+
+<body>
+    <div id="app">
+        <div id="sidebar" class="active" style="background-color: #072146;">
+            <div class="sidebar-wrapper active" style="background-color: #072146;">
+                <div class="sidebar-header" style="background-color: #072146;">
+                    <div class="d-flex justify-content-between">
+                        <div class="logo">
+                            <a href="index.html"><img src="assets/images/logo/LogoCC100.png" alt="Logo" ></a>
+                        </div>
+                        <div class="toggler">
+                            <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-menu">
+                    <ul class="menu">
+                        <li class="sidebar-title" style="color: #2DCCCD;">Menu</li>
+                        
+                        <li
+                            class="sidebar-item ">
+                            <a href="index.html" class='sidebar-link'>
+                                <i class="bi bi-grid-fill"></i>
+                                <span style="color: #2DCCCD;">Dashboard</span>
+                            </a>
+                        </li>
+                        
+                        <li
+                            class="sidebar-item active">
+                            <a href="2021buscador.html" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
+                                <span style="color: #2DCCCD;">Buscador</span>
+                            </a>
+                        </li>
+                        
+                        <li
+                            class="sidebar-item">
+                            <a href="2021DarAcceso.html" class='sidebar-link'>
+                            <i class="bi bi-collection-fill"></i>
+                                <span style="color: #2DCCCD;">Dar acceso</span>
+                            </a>
+                        </li>
+                        
+                        <li
+                            class="sidebar-item">
+                            <a href="2021SubirInfo" class='sidebar-link'>
+                                <i class="bi bi-grid-1x2-fill"></i>
+                                <span style="color: #2DCCCD;">Subir información</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+            </div>
+        </div>
+        <div id="main">
+            <div class="myDiv" style="background-color: #2DCCCD;">
+                <div class="d-flex justify-content-between">
+                    
+                </div>
+            </div>
+
+            <header class="mb-3" >
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+            
+            <div class="page-heading">
+                <h3>Buscador del historial de cuentahabientes</h3>
+            </div>
+            <div class="page-content">
+                <div class="row">
+                    <div class="col-lg-5 col-12">
+                        <div id="auth-left">
+                            <div class="card-content" style="background-color:#FFFFFF; border-radius: 10px;">
+                                <div class="card-body">
+                                    <form action="index.html">
+                                        <div class="form-group position-relative has-icon-left mb-4">
+                                            <input type="text" class="form-control form-control-xl" placeholder="Nombres" style="background-color: #F2F5FA;">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-person"></i>
+                                            </div>
+                                        </div>
+                                        <div class="form-group position-relative has-icon-left mb-4">
+                                            <input type="text" class="form-control form-control-xl" placeholder="Apellido paterno" style="background-color: #F2F5FA;">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-person"></i>
+                                            </div>
+                                        </div>
+                                        <div class="form-group position-relative has-icon-left mb-4">
+                                            <input type="text" class="form-control form-control-xl" placeholder="Apellido materno" style="background-color: #F2F5FA;">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-person"></i>
+                                            </div>
+                                        </div>
+                                        <div class="form-group position-relative has-icon-left mb-4">
+                                            <input type="text" class="form-control form-control-xl" placeholder="Teléfono" style="background-color: #F2F5FA;">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-chat-dots-fill"></i>
+                                            </div>
+                                        </div>
+                                        <div class="form-group position-relative has-icon-left mb-4">
+                                            <input type="text" class="form-control form-control-xl" placeholder="Correo electrónico" style="background-color: #F2F5FA;">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-envelope"></i>
+                                            </div>
+                                        </div>
+                                        <div class="form-group position-relative has-icon-left mb-4">
+                                            <input type="text" class="form-control form-control-xl" placeholder="Código postal" style="background-color: #F2F5FA;">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-shield-lock"></i>
+                                            </div>
+                                        </div>
+                                        <div class="form-group position-relative has-icon-left mb-4">
+                                            <input type="text" class="form-control form-control-xl" placeholder="Periodo" style="background-color: #F2F5FA;">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-shield-lock"></i>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5" style="background-color: #2DCCCD;">Buscar</button>
+                                    </form>
+                                </div>
+
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-12">
+                        <div id="auth-right">
+                            <div class="card-content" style="background-color:#FFFFFF; border-radius: 10px;">
+                                <div class="card-body">
+                                    <h4>Perfil del usuario</h4>
+                                    <div class="col-12 col-xl-8">
+                                        <img src="assets/images/samples/Tarjeta.png" alt="tarjeta" class="aline-center">
+                                    </div>
+                                    <div class="row" width="50">
+                                        <div class="col-2">
+                                            <img src="assets/images/icon banco.png" alt="banco" >
+                                            
+                                        </div>
+                                         <div class="col-10">
+                                            <h5>Bancos de los que es cliente</h5>
+                                            <h6>BBVA, CITI</h6>
+                                         </div>   
+                                    </div>
+                                    
+                                    <div class="row" width="70">
+                                        <div class="col-2">
+                                            <img src="assets/images/icon contracargo.png" alt="contracargo" >
+                                        </div>
+                                        <div class="col-10">
+                                            <h5>Número total de contracargos</h5>
+                                            <h6>10</h6>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <img src="assets/images/icon tarjeta.png" alt="tarjetaIcon" >
+                                            
+                                        </div>
+                                        <div class="col-10">
+                                            <h5>Número de tarjetas</h5>
+                                            <h6>2</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <img src="assets/images/icon estrella.png" alt="Score" >
+                                            
+                                        </div>
+                                        <div class="col-10">
+                                            <h5>Score</h5>
+                                            <h6>90%</h6>
+                                        </div>
+                                    </div>
+                                    <div class="px-4">
+                                        <button class='btn btn-block btn-xl btn-light-primary font-bold mt-3' style="background-color: #2DCCCD;"  onclick="nivelesUser()">Más detalles</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <footer>
+                <div class="footer clearfix text-muted">
+                    <div class="float-start">
+                        <p>Hackaton 2021</p>
+                    </div>
+                    <div class="float-end">
+                        <p>Dynamite Remastered <span class="text-danger"><i class="bi bi-heart"></i></span> 
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+    <script src="assets/js/pages/dashboard.js"></script>
+
+    <script src="assets/js/mazer.js"></script>
+</body>
+
+</html>
